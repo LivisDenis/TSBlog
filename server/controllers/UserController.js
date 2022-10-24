@@ -1,15 +1,9 @@
-import {validationResult} from "express-validator";
 import bcrypt from "bcrypt";
 import UserModel from "../models/User.js";
 import jwt from "jsonwebtoken";
 
 const register = async (req, res) => {
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({errors: errors.array()});
-        }
-
         const password = req.body.password
         const salt = await bcrypt.genSalt(10)
         const hash = await bcrypt.hash(password, salt)
@@ -40,12 +34,11 @@ const register = async (req, res) => {
             token
         })
     } catch (err) {
-        return res.status(500).json({
+        res.status(500).json({
             message: 'Не удалось зарегистрироваться'
         })
     }
 }
-
 const login = async (req, res) => {
     try {
         const user = await UserModel.findOne({email: req.body.email})
@@ -80,12 +73,11 @@ const login = async (req, res) => {
         })
 
     } catch (err) {
-        return res.status(500).json({
+        res.status(500).json({
             message: 'Не удалось авторизоваться'
         })
     }
 }
-
 const getMe = async (req, res) => {
     try {
         const user = await UserModel.findById(req.userId)
@@ -100,10 +92,14 @@ const getMe = async (req, res) => {
 
         res.json(userData)
     } catch (err) {
-        return res.status(500).json({
+        res.status(500).json({
             message: 'Нет доступа'
         })
     }
 }
 
-export default {register, login, getMe}
+export default {
+    register,
+    login,
+    getMe
+}
