@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58d2bba0-10ce-4137-9a9a-c1f31bf5ee4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/controllers/PostController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/Post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/utils/handleValidationErrors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/validations.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +28,7 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/Users/macuser/Documents/javascriptProject/Pet-projects/blog",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "/Users/macuser/Documents/javascriptProject/Pet-projects/blog/client/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -48,7 +40,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1666473325292</updated>
-      <workItem from="1666473326793" duration="25155000" />
+      <workItem from="1666473326793" duration="26380000" />
     </task>
     <servers />
   </component>
