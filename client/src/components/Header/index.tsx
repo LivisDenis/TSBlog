@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Button from '@mui/material/Button';
 
 import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {RootState} from "../../redux/store";
 
-const Header = () => {
-    const isAuth = false;
+const Header: FC = () => {
+    const {user} = useSelector((state: RootState) => state.authSlice)
 
     return (
         <div className={styles.root}>
@@ -16,7 +18,7 @@ const Header = () => {
                         <div>BLOG</div>
                     </Link>
                     <div className={styles.buttons}>
-                        {isAuth ? (
+                        {user ? (
                             <>
                                 <Link to="/posts/create">
                                     <Button variant="contained">Написать статью</Button>

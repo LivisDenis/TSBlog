@@ -17,26 +17,31 @@ type PostUserType = {
 }
 
 type PostType = {
-    id: string | undefined
-    title: string | undefined
-    createdAt: string | undefined
-    imageUrl: string | undefined
-    user: PostUserType | undefined
-    viewsCount: number | undefined
-    commentsCount: number | undefined
-    tags: string[] | undefined
-    isFullPost: boolean | undefined
+    id?: string | undefined
+    title?: string | undefined
+    createdAt?: string | undefined
+    imageUrl?: string | undefined
+    user?: PostUserType | undefined
+    viewsCount?: number | undefined
+    commentsCount?: number | undefined
+    tags?: string[] | undefined
+    isFullPost?: boolean | undefined
     isEditable?: boolean | undefined
+    isLoading?: boolean | undefined
     children?: ReactNode
 }
 
 const Post: FC<PostType> = (props) => {
     const {
         id, title, createdAt, imageUrl, user, viewsCount,
-        commentsCount, tags, children, isFullPost, isEditable
+        commentsCount, tags, children, isFullPost, isEditable, isLoading
     } = props
 
     const dateCreated = createdAt?.replace(/T.*/, '')
+
+    if (isLoading) {
+        return <PostSkeleton/>
+    }
 
     return (
         <div className={clsx(styles.root, {[styles.rootFull]: isFullPost})}>

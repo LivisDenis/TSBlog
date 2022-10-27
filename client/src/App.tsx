@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import PostPage from "./pages/PostPage";
@@ -9,20 +9,25 @@ import Registration from "./pages/Registration";
 import AddPost from "./pages/AddPost";
 
 function App() {
-  return (
-      <>
-          <Header />
-          <Container maxWidth="lg">
-              <Routes>
-                <Route path='/' element={<Home />}/>
-                <Route path='/posts/:id' element={<PostPage />}/>
-                <Route path='/posts/create' element={<AddPost />}/>
-                <Route path='/login' element={<Login />}/>
-                <Route path='/registration' element={<Registration />}/>
-              </Routes>
-          </Container>
-      </>
-  );
+
+    useEffect(() => {
+        // if ()
+    }, [])
+
+    return (
+        <>
+            <Header/>
+            <Container maxWidth="lg">
+                <Routes>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='/posts/:id' element={<PostPage/>}/>
+                    <Route path='/posts/create' element={<AddPost/>}/>
+                    <Route path='/login' element={<Login/>}/>
+                    <Route path='/registration' element={<Registration/>}/>
+                </Routes>
+            </Container>
+        </>
+    );
 }
 
 export default App;

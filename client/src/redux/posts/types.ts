@@ -1,8 +1,8 @@
 
 export type UserType = {
-    _id: string
-    avatarUrl: string
-    createdAt: string
+    _id?: string
+    avatarUrl?: string
+    createdAt?: string
     email: string
     fullName: string
 }
