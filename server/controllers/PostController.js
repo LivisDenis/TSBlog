@@ -39,7 +39,7 @@ const getOne = async (req, res) => {
 
                 res.json(doc)
             }
-        )
+        ).populate('user')
     } catch (err) {
         res.status(500).json({
             message: 'Не удалось получить статью'
