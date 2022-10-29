@@ -10,18 +10,11 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {UserRegisterType} from "../../redux/auth/types";
 import {RootState, useAppDispatch} from "../../redux/store";
 import {fetchRegister} from "../../redux/auth/AsyncActions";
-import {useNavigate} from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {UserType} from "../../redux/posts/types";
-
-type payloadT = {
-    payload: UserType
-}
 
 const Registration: FC = () => {
-    const navigate = useNavigate()
     const dispatch = useAppDispatch()
-    const {user} = useSelector((state: RootState) => state.authSlice)
     const {register, handleSubmit, formState: {errors}} = useForm<UserRegisterType>({mode: "onChange"});
 
     const onSubmit: SubmitHandler<UserRegisterType> = async (values) => {
@@ -32,23 +25,23 @@ const Registration: FC = () => {
         }
 
         if ('token' in data.payload) {
-            window.localStorage.setItem('token', data.payload.token)
+            localStorage.setItem('token', data.payload.token)
         }
     }
 
-    if (user) {
-        navigate('/')
+    if (localStorage.getItem('token')) {
+        return <Navigate to='/'/>
     }
 
     return (
         <Paper classes={{root: styles.root}}>
+            <Typography classes={{root: styles.title}} variant="h5">
+                Создание аккаунта
+            </Typography>
+            <div className={styles.avatar}>
+                <Avatar sx={{width: 100, height: 100}}/>
+            </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Typography classes={{root: styles.title}} variant="h5">
-                    Создание аккаунта
-                </Typography>
-                <div className={styles.avatar}>
-                    <Avatar sx={{width: 100, height: 100}}/>
-                </div>
                 <TextField {...register("fullName",  { required: 'Укажите имя' })}
                            className={styles.field}
                            label="Полное имя"
@@ -59,14 +52,14 @@ const Registration: FC = () => {
                            className={styles.field}
                            type='email'
                            label="E-Mail"
-                           error={Boolean(errors.fullName?.message)}
-                           helperText={errors.fullName?.message}
+                           error={Boolean(errors.email?.message)}
+                           helperText={errors.email?.message}
                            fullWidth/>
                 <TextField {...register("password",  { required: 'Укажите пароль', minLength: 6 } )}
                            type='password'
                            className={styles.field}
-                           error={Boolean(errors.fullName?.message)}
-                           helperText={errors.fullName?.message}
+                           error={Boolean(errors.password?.message)}
+                           helperText={errors.password?.message}
                            label="Пароль"
                            fullWidth/>
                 <Button type='submit' size="large" variant="contained" fullWidth>

@@ -12,6 +12,11 @@ export type UserRegisterType = {
     password: string
 }
 
+export type UserLoginType = {
+    email: string
+    password: string
+}
+
 export type AuthStateType = {
     user: UserType | null
     status: AuthSliceEnum

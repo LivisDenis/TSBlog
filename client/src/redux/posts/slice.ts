@@ -11,7 +11,11 @@ const initialState: PostStateType = {
 export const postsSlice = createSlice({
     name: 'posts',
     initialState,
-    reducers: {},
+    reducers: {
+        create: (state: PostStateType, action: PayloadAction<PostType>) => {
+            state.posts.push(action.payload)
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchPosts.pending, state => {
             state.status = PostSliceEnum.LOADING
@@ -28,6 +32,6 @@ export const postsSlice = createSlice({
 
 const {actions, reducer} = postsSlice
 
-// export const {} = actions
+export const {create} = actions
 
 export default reducer

@@ -3,12 +3,18 @@ import Button from '@mui/material/Button';
 
 import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {RootState} from "../../redux/store";
 
 const Header: FC = () => {
-    const {user} = useSelector((state: RootState) => state.authSlice)
+    const navigate = useNavigate()
+    const user = Boolean(localStorage.getItem('token'))
+
+    const onClickLogout = () => {
+        localStorage.removeItem('token')
+        navigate('/')
+    }
 
     return (
         <div className={styles.root}>
@@ -23,7 +29,7 @@ const Header: FC = () => {
                                 <Link to="/posts/create">
                                     <Button variant="contained">Написать статью</Button>
                                 </Link>
-                                <Button variant="contained" color="error">
+                                <Button onClick={onClickLogout} variant="contained" color="error">
                                     Выйти
                                 </Button>
                             </>

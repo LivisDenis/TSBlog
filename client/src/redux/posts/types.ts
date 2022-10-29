@@ -3,7 +3,7 @@ export type UserType = {
     _id?: string
     avatarUrl?: string
     createdAt?: string
-    email: string
+    email?: string
     fullName: string
 }
 

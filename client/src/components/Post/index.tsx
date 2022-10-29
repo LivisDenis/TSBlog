@@ -10,18 +10,20 @@ import styles from './Post.module.scss';
 import UserInfo from '../UserInfo';
 import PostSkeleton from './Skeleton';
 import {Link} from "react-router-dom";
+import {UserType} from "../../redux/posts/types";
+import {baseUrl} from "../../axios";
 
-type PostUserType = {
-    avatarUrl: string | undefined
-    fullName: string | undefined
-}
+// type PostUserType = {
+//     avatarUrl: string | undefined
+//     fullName: string | undefined
+// }
 
 type PostType = {
     id?: string | undefined
     title?: string | undefined
     createdAt?: string | undefined
     imageUrl?: string | undefined
-    user?: PostUserType | undefined
+    user?: UserType | undefined
     viewsCount?: number | undefined
     commentsCount?: number | undefined
     tags?: string[] | undefined
@@ -55,11 +57,11 @@ const Post: FC<PostType> = (props) => {
                     <DeleteIcon/>
                 </IconButton>
             </div>
-            {imageUrl && <img src={imageUrl}
+            {imageUrl && <img src={baseUrl + imageUrl}
                               className={clsx(styles.image, {[styles.imageFull]: isFullPost})}
             />}
             <div className={styles.wrapper}>
-                <UserInfo additionalText={dateCreated} fullName={user?.fullName} avatarUrl={user?.avatarUrl}/>
+                <UserInfo additionalText={dateCreated} fullName={user?.fullName} avatarUrl={user}/>
                 <div className={styles.indention}>
                     <h2 className={clsx(styles.title, {[styles.titleFull]: isFullPost})}>
                         <Link to={`/posts/${id}`}>{title}</Link>

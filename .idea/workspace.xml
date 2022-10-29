@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58d2bba0-10ce-4137-9a9a-c1f31bf5ee4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/redux/auth/AsyncActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/redux/auth/slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/redux/auth/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/axios.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Post/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Post/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/AddPost/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/AddPost/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Login/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/PostPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/PostPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Registration/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Registration/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/auth/AsyncActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/auth/AsyncActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/auth/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/auth/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/posts/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/posts/slice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/redux/posts/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/posts/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666473325292</updated>
       <workItem from="1666473326793" duration="27566000" />
-      <workItem from="1666722300072" duration="30540000" />
+      <workItem from="1666722300072" duration="47060000" />
     </task>
     <servers />
   </component>
