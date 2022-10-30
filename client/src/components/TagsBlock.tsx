@@ -1,4 +1,5 @@
 import React, {FC} from "react";
+import SideBlock from "./SideBlock";
 
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -8,14 +9,13 @@ import TagIcon from "@mui/icons-material/Tag";
 import ListItemText from "@mui/material/ListItemText";
 import Skeleton from "@mui/material/Skeleton";
 
-import SideBlock from "./SideBlock";
-
 type TagsBlockType = {
     items: string[]
+    isLoading: boolean
 }
 
-const TagsBlock: FC<TagsBlockType> = ({ items }) => {
-    const isLoading = true
+const TagsBlock: FC<TagsBlockType> = ({ items, isLoading }) => {
+
     return (
         <SideBlock title="Тэги">
             <List>

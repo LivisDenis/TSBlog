@@ -1,4 +1,8 @@
 import React, {FC} from 'react';
+import {SubmitHandler, useForm} from "react-hook-form";
+import {Navigate} from "react-router-dom";
+import {UserRegisterType} from "../../@types/user";
+
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
@@ -6,26 +10,20 @@ import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 
 import styles from './Registration.module.scss';
-import {SubmitHandler, useForm} from "react-hook-form";
-import {UserRegisterType} from "../../redux/auth/types";
-import {RootState, useAppDispatch} from "../../redux/store";
-import {fetchRegister} from "../../redux/auth/AsyncActions";
-import {Navigate, useNavigate} from "react-router-dom";
-import {useSelector} from "react-redux";
+import axios from "../../axios";
 
 const Registration: FC = () => {
-    const dispatch = useAppDispatch()
     const {register, handleSubmit, formState: {errors}} = useForm<UserRegisterType>({mode: "onChange"});
 
     const onSubmit: SubmitHandler<UserRegisterType> = async (values) => {
-        const data = await dispatch(fetchRegister(values))
+        const {data} = await axios.post('/auth/registration', values)
 
-        if (!data.payload) {
+        if (!data) {
             alert('Не удалось зарегистрироваться')
         }
 
-        if ('token' in data.payload) {
-            localStorage.setItem('token', data.payload.token)
+        if ('token' in data) {
+            localStorage.setItem('token', data.token)
         }
     }
 

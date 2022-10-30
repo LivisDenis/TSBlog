@@ -7,10 +7,12 @@ type UserInfoType = {
     additionalText: string | undefined
 }
 
-const UserInfo: FC<UserInfoType> = ({ avatarUrl, fullName, additionalText }) => {
+const UserInfo: FC<UserInfoType> = ({avatarUrl, fullName, additionalText}) => {
     return (
         <div className={styles.root}>
-            <img className={styles.avatar} src={avatarUrl || '/noavatar.png'} alt={fullName} />
+            <img className={styles.avatar}
+                 src='https://www.kindpng.com/picc/m/22-223863_no-avatar-png-circle-transparent-png.png'
+                 alt={fullName}/>
             <div className={styles.userDetails}>
                 <span className={styles.userName}>{fullName}</span>
                 <span className={styles.additional}>{additionalText}</span>

@@ -4,8 +4,6 @@ import Button from '@mui/material/Button';
 import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
 import {Link, useNavigate} from "react-router-dom";
-import {useSelector} from "react-redux";
-import {RootState} from "../../redux/store";
 
 const Header: FC = () => {
     const navigate = useNavigate()

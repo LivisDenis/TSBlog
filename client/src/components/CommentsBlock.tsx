@@ -8,6 +8,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import Skeleton from "@mui/material/Skeleton";
+import {PostType} from "../redux/posts/types";
 
 type PostUserType = {
     avatarUrl: string
@@ -20,15 +21,15 @@ type CommentBlockType = {
 }
 
 type CommentsBlock = {
-    items: CommentBlockType[]
+    title: string
+    items: PostType[] | PostType | undefined
     children?: ReactNode
 }
 
-const CommentsBlock: FC<CommentsBlock> = ({ items, children }) => {
-    const isLoading = true
+const CommentsBlock: FC<CommentsBlock> = ({ items, children, title }) => {
 
     return (
-        <SideBlock title="Комментарии">
+        <SideBlock title={title}>
             <List>
                 <React.Fragment>
                     <ListItem alignItems="flex-start">

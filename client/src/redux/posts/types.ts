@@ -1,11 +1,4 @@
-
-export type UserType = {
-    _id?: string
-    avatarUrl?: string
-    createdAt?: string
-    email?: string
-    fullName: string
-}
+import {UserType} from "../../@types/user";
 
 export type PostType = {
     _id: string

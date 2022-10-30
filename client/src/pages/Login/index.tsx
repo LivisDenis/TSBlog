@@ -1,20 +1,17 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
+import {Navigate} from "react-router-dom";
+import {SubmitHandler, useForm} from "react-hook-form";
+import axios from "../../axios";
+import {UserLoginType, UserRegisterType} from "../../@types/user";
+
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 
 import styles from "./Login.module.scss";
-import {Navigate} from "react-router-dom";
-import {RootState, useAppDispatch} from "../../redux/store";
-import {useSelector} from "react-redux";
-import {SubmitHandler, useForm} from "react-hook-form";
-import {UserLoginType, UserRegisterType} from "../../redux/auth/types";
-import {fetchLogin} from "../../redux/auth/AsyncActions";
-import axios from "../../axios";
 
 const Login: FC = () => {
-    // const {user} = useSelector((state: RootState) => state.authSlice)
     const {register, handleSubmit, formState: {errors}} = useForm<UserRegisterType>({mode: "onChange"});
 
     const onSubmit: SubmitHandler<UserLoginType> = async (values) => {
@@ -23,7 +20,6 @@ const Login: FC = () => {
         if (!data) {
             alert('Не удалось авторизоваться')
         }
-
         if ('token' in data) {
             localStorage.setItem('token', data.token)
         }

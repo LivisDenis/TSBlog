@@ -3,7 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="58d2bba0-10ce-4137-9a9a-c1f31bf5ee4d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/PostController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/PostController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AddComment/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AddComment/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CommentsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CommentsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Post/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Post/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/TagsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/TagsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/UserInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/UserInfo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/AddPost/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/AddPost/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Login/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/PostPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/PostPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Registration/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Registration/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/auth/AsyncActions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/auth/slice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/auth/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/posts/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/posts/slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/posts/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/posts/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667001765950.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667001883349.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667002101086.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667002355409.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667002745356.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667003140961.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667003645096.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/image-1667003741029.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666473325292</updated>
       <workItem from="1666473326793" duration="27566000" />
-      <workItem from="1666722300072" duration="47385000" />
+      <workItem from="1666722300072" duration="64887000" />
     </task>
     <servers />
   </component>

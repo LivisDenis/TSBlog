@@ -10,10 +10,8 @@ import AddPost from "./pages/AddPost";
 import axios from "./axios";
 
 const App = () => {
-    // let user
 
     useEffect(() => {
-        // user = localStorage.getItem('token')
         axios.get('/auth/me')
             .then(res => res)
     }, [])
@@ -26,6 +24,7 @@ const App = () => {
                     <Route path='/' element={<Home/>}/>
                     <Route path='/posts/:id' element={<PostPage/>}/>
                     <Route path='/posts/create' element={<AddPost/>}/>
+                    <Route path='/posts/:id/edit' element={<AddPost/>}/>
                     <Route path='/login' element={<Login/>}/>
                     <Route path='/registration' element={<Registration/>}/>
                     <Route path="*" element={<Navigate to="/" replace />}/>

@@ -1,4 +1,17 @@
-import React, {FC, FormEventHandler, LegacyRef, MutableRefObject, useCallback, useMemo, useRef, useState} from 'react';
+import React, {
+    FC,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState
+} from 'react';
+import axios, {baseUrl} from "../../axios";
+import {Link, useNavigate, useParams} from "react-router-dom";
+import {PostType} from "../../redux/posts/types";
+import {create} from "../../redux/posts/slice";
+import {useAppDispatch} from "../../redux/store";
+
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
@@ -6,32 +19,32 @@ import SimpleMDE from 'react-simplemde-editor';
 
 import 'easymde/dist/easymde.min.css';
 import styles from './AddPost.module.scss';
-import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
-import {UserLoginType, UserRegisterType} from "../../redux/auth/types";
-import axios, {baseUrl} from "../../axios";
-import {Link, Navigate, useNavigate} from "react-router-dom";
-import {PostType} from "../../redux/posts/types";
-import {useDispatch} from "react-redux";
-import {create} from "../../redux/posts/slice";
-
-type CreatePostType = {
-    imageUrl?: string
-    title: string
-    text: string
-    tags: ''
-}
 
 const AddPost: FC = () => {
+    const {id} = useParams()
     const navigate = useNavigate()
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const [fields, setFields] = useState({
         imageUrl: '',
         title: '',
         tags: ''
     })
-    const [valueText, setValueText] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
+    const [valueText, setValueText] = useState<string | undefined>('')
     const inputFileRef = useRef<HTMLInputElement | null>(null)
+
+    useEffect(() => {
+        if (id) {
+            axios.get(`/posts/${id}`)
+                .then(res => {
+                    setFields({
+                        imageUrl: res.data.imageUrl,
+                        title: res.data.title,
+                        tags: res.data.tags,
+                    })
+                    setValueText(res.data.text)
+                })
+        }
+    }, [id])
 
     const onChange = useCallback((value: string) => {
         setValueText(value)
@@ -79,9 +92,12 @@ const AddPost: FC = () => {
                 tags: fields.tags
             }
 
-            const {data} = await axios.post<PostType>('/posts', postData)
+            const {data} = id ? await axios.patch<PostType>(`/posts/${id}`, postData)
+                : await axios.post<PostType>('/posts', postData)
 
-            navigate(`/posts/${data._id}`)
+            const _id = id ?? data._id
+
+            navigate(`/posts/${_id}`)
             dispatch(create(data))
         } catch (err) {
             console.warn(err)
@@ -90,23 +106,23 @@ const AddPost: FC = () => {
     }
 
     return (
-        <Paper style={{ padding: 30 }}>
+        <Paper style={{padding: 30}}>
             <Button onClick={() => inputFileRef.current!.click()} variant="outlined" size="large">
                 Загрузить превью
             </Button>
-            <input ref={inputFileRef} onChange={handleChangeFile} type="file" hidden />
+            <input ref={inputFileRef} onChange={handleChangeFile} type="file" hidden/>
             {fields.imageUrl &&
                 <>
                     <Button variant="contained" onClick={onClickRemoveImg} color="error">
                         Удалить
                     </Button>
-                    <img className={styles.image} src={baseUrl + fields.imageUrl} alt="Uploaded" />
+                    <img className={styles.image} src={baseUrl + fields.imageUrl} alt="Uploaded"/>
                 </>
             }
-            <br />
-            <br />
+            <br/>
+            <br/>
             <TextField
-                classes={{ root: styles.title }}
+                classes={{root: styles.title}}
                 value={fields.title}
                 onChange={(e) => setFields({...fields, title: e.target.value})}
                 variant="standard"
@@ -114,12 +130,12 @@ const AddPost: FC = () => {
                 fullWidth
             />
             <TextField
-                classes={{ root: styles.tags }}
+                classes={{root: styles.tags}}
                 value={fields.tags}
                 onChange={(e) => setFields({...fields, tags: e.target.value})}
                 variant="standard"
                 placeholder="Тэги"
-                fullWidth />
+                fullWidth/>
             <SimpleMDE
                 className={styles.editor}
                 value={valueText}
@@ -127,7 +143,7 @@ const AddPost: FC = () => {
                 options={options}/>
             <div className={styles.buttons}>
                 <Button onClick={onSubmit} size="large" variant="contained">
-                    Опубликовать
+                    {id ? 'Сохранить' : 'Опубликовать'}
                 </Button>
                 <Link to="/">
                     <Button size="large">Отмена</Button>
