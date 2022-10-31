@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="58d2bba0-10ce-4137-9a9a-c1f31bf5ee4d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/axios.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666473325292</updated>
       <workItem from="1666473326793" duration="27566000" />
-      <workItem from="1666722300072" duration="82636000" />
+      <workItem from="1666722300072" duration="87020000" />
     </task>
     <servers />
   </component>
